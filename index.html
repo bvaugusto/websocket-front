@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container col-2">
+    <h4>Calculadora Websocket</h4>
+    <div id="status-websocket"></div>
+
+
+    <form id="form-calculator" method="POST">
+      <h4>Histórico</h4>
+      <div class="form-group">
+        <textarea class="form-control" id="history" cols="3" rows="3"></textarea>
+      </div>
+      <div class="form-group md-2">
+        <input type="text" class="form-control" id="display" disabled />
+      </div>
+      <input type="hidden" id="display-hidden">
+      <div class="form-group align-center">
+        <input type="button" class="col-2 btn btn-secondary" value="7" onclick="buttonClick( value );" />
+        <input type="button" class="col-2 btn btn-secondary" value="8" onclick="buttonClick( value );" />
+        <input type="button" class="col-2 btn btn-secondary" value="9" onclick="buttonClick( value );" />
+        <input type="button" class="col-2 btn btn-secondary" value="/" onclick="buttonClick( value );" />
+      </div>
+
+      <div class="form-group align-center">
+        <input type="button" class="col-2 btn btn-secondary" value="4" onclick="buttonClick( value );" />
+        <input type="button" class="col-2 btn btn-secondary" value="5" onclick="buttonClick( value );" />
+        <input type="button" class="col-2 btn btn-secondary" value="6" onclick="buttonClick( value );" />
+        <input type="button" class="col-2 btn btn-secondary" value="*" onclick="buttonClick( value );" />
+      </div>
+
+      <div class="form-group align-center">
+        <input type="button" class="col-2 btn btn-secondary" value="1" onclick="buttonClick( value );" />
+        <input type="button" class="col-2 btn btn-secondary" value="2" onclick="buttonClick( value );" />
+        <input type="button" class="col-2 btn btn-secondary" value="3" onclick="buttonClick( value );" />
+        <input type="button" class="col-2 btn btn-secondary" value="-" onclick="buttonClick( value );" />
+      </div>
+
+      <div class="form-group align-center">
+        <input type="button" class="col-2 btn btn-secondary" value="0" onclick="buttonClick( value );" />
+        <input type="button" class="col-2 btn btn-secondary" value="." onclick="buttonClick( value );" />
+        <input type="button" class="col-2 btn btn-secondary" value="C" onclick="buttonClear();" />
+        <input type="button" class="col-2 btn btn-secondary" value="+" onclick="buttonClick( value );" />
+      </div>
+
+      <div class="form-group align-center">
+        <input type="submit" class="col-8 btn btn-secondary" value="=" />
+      </div>
+
+      <div class="form-group align-center">
+        <button type="button" class="col-8 btn btn-danger" onclick="closeWebSocket();">Finalizar conexão</button>
+      </div>
+
+    </form>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
